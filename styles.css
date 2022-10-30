@@ -230,4 +230,5 @@ select:focus {
 
 p {
   margin: 0px;
+  border-radius: 2px;
 }
