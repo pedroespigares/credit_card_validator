@@ -1,6 +1,10 @@
 function writeNumbers(numbers, digitsToWrite) {
   for (let i = 0; i < numbers.value.length; i++) {
-    digitsToWrite[i].innerHTML = numbers.value[i];
+    if (i >= 4 && i < 12) {
+      digitsToWrite[i].innerHTML = "*";
+    } else {
+      digitsToWrite[i].innerHTML = numbers.value[i];
+    }
   }
   document.getElementById("numbers").classList.add("focus");
 }
@@ -11,12 +15,17 @@ function writeOwner(owner, ownerToWrite) {
 }
 
 function writeMonth(month, monthToWrite) {
-  monthToWrite.innerHTML = month.value;
+  if (month.value < 10) {
+    monthToWrite.innerHTML = `0${month.value}`;
+  } else {
+    monthToWrite.innerHTML = month.value;
+  }
+
   document.getElementById("date").classList.add("focus");
 }
 
 function writeYear(year, yearToWrite) {
-  yearToWrite.innerHTML = year.value;
+  yearToWrite.innerHTML = year.value.slice(-2);
   document.getElementById("date").classList.add("focus");
 }
 
